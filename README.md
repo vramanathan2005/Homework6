@@ -3,7 +3,7 @@
 
 # Homework6
 
-[![R-CMD-check](https://github.com/vramanathan2005/Homework6/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/vramanathan2005/Homework6/actions/workflows/R-CMD-check.yaml)
+[R-CMD-check](https://github.com/vramanathan2005/Homework6/actions/workflows/check-standard.yaml/badge.svg)\](<https://github.com/vramanathan2005/Homework6/actions/workflows/R-CMD-check.yaml>)
 
 The **Homework6** package implements an S4 class called `sparse_numeric`
 for working with sparse numeric vectors in R. Instead of storing every
