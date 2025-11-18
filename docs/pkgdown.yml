@@ -1,0 +1,8 @@
+pandoc: 3.6.3
+pkgdown: 2.2.0
+pkgdown_sha: ~
+articles: {}
+last_built: 2025-11-18T22:23Z
+urls:
+  reference: https://vramanathan2005.github.io/Homework6/reference
+  article: https://vramanathan2005.github.io/Homework6/articles

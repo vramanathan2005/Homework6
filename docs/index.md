@@ -1,0 +1,89 @@
+# Homework6
+
+The **Homework6** package implements an S4 class called `sparse_numeric`
+for working with sparse numeric vectors in R. Instead of storing every
+element of a vector, it stores only the non-zero values and their
+positions, which is more memory-efficient for large, mostly-zero
+vectors.
+
+The package provides:
+
+- The `sparse_numeric` S4 class (with slots `value`, `pos`, and
+  `length`)
+- Coercion between base `numeric` vectors and `sparse_numeric`
+- Arithmetic operations for sparse vectors: `+`, `-`, `*`
+- `sparse_crossprod()` for dot products
+- A
+  [`mean()`](https://vramanathan2005.github.io/Homework6/reference/mean.md)
+  method that correctly includes implicit zeros
+- A
+  [`norm()`](https://vramanathan2005.github.io/Homework6/reference/norm.md)
+  method for the Euclidean (L2) norm
+- [`standardize()`](https://vramanathan2005.github.io/Homework6/reference/standardize.md)
+  to z-score a sparse vector (mean 0, sd 1)
+
+## Installation
+
+You can install the development version of **Homework6** from GitHub:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("vramanathan2005/Homework6")
+```
+
+## Basic example
+
+The example below shows how to create a sparse vector, compute its mean
+and norm, and standardize it:
+
+``` r
+library(Homework6)
+#> 
+#> Attaching package: 'Homework6'
+#> The following objects are masked from 'package:base':
+#> 
+#>     mean, norm
+
+# start with a dense numeric vector
+x_dense <- c(0, 5, 0, -2, 0, 3)
+
+# convert to sparse_numeric
+x_sparse <- as(x_dense, "sparse_numeric")
+
+# look at the sparse representation and dense version
+x_sparse
+#> Sparse numeric vector of length 6 
+#> Non-zero positions: 2 4 6 
+#> Values: 5 -2 3
+as(x_sparse, "numeric")
+#> [1]  0  5  0 -2  0  3
+```
+
+``` r
+# summary functions
+mean_x   <- mean(x_sparse)   # includes implicit zeros
+norm_x   <- norm(x_sparse)   # Euclidean norm
+
+x_std    <- standardize(x_sparse)
+x_std_dn <- as(x_std, "numeric")
+
+mean_x
+#> [1] 1
+norm_x
+#> [1] 6.164414
+x_std_dn
+#> [1] -0.3952847  1.5811388 -0.3952847 -1.1858541 -0.3952847  0.7905694
+mean(x_std_dn)
+#> [1] 0
+sd(x_std_dn)
+#> [1] 1
+```
+
+## Updating the README
+
+After you edit this file, re-generate `README.md` so GitHub shows the
+latest version:
+
+``` r
+devtools::build_readme()
+```
