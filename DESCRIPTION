@@ -1,0 +1,27 @@
+Package: Homework6
+Title: Sparse Numeric Vector Utilities
+Version: 0.0.0.9000
+Authors@R: 
+    person("Varun", "Ramanathan", email = "varun.ramanathan@utexas.edu", 
+           role = c("aut", "cre"))
+Description: 
+    Provides an S4 class 'sparse_numeric' for sparse numeric vectors,
+    along with arithmetic operations, cross-product, mean, Euclidean norm,
+    and standardization, implemented in a memory-efficient way.
+License: GPL-3
+Depends: 
+    R (>= 4.3.0)
+Imports: 
+    methods,
+    stats
+Suggests: 
+    testthat (>= 3.0.0),
+    covr,
+    pkgdown
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Config/testthat/edition: 3
+URL: https://vramanathan2005.github.io/Homework6,
+    https://github.com/vramanathan2005/Homework6

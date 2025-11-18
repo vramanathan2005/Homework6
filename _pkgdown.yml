@@ -1,0 +1,37 @@
+url: https://vramanathan2005.github.io/Homework6
+
+template:
+  params:
+    bootswatch: cosmo
+
+navbar:
+  structure:
+    left:
+      - home
+      - reference
+    right:
+      - github
+
+  components:
+    home:
+      text: "Overview"
+      href: index.html
+    reference:
+      text: "Reference"
+      href: reference/index.html
+    github:
+      icon: fab fa-github
+      href: https://github.com/vramanathan2005/Homework6
+
+reference:
+  - title: "Core class & operations"
+    desc: "Sparse numeric S4 class, slots, coercion, and arithmetic operators."
+    contents:
+      - sparse_numeric-class
+
+  - title: "Summary functions"
+    desc: "Summary helpers for sparse_numeric vectors."
+    contents:
+      - mean
+      - norm
+      - standardize
